@@ -74,7 +74,7 @@ let forbidden_youth; // The people of exact 18 year old cannot run and no racenu
 
 if ((runner_age > 18) && (registration_time === "09:30 a.m")){
   early_adults = true;
-  console.log(`Your racenumber is ${raceNumber + 1000}`);
+  console.log(`You run at 9:30 and your racenumber is ${raceNumber + 1000}`);
 }
 else{
   early_adults = false;
@@ -82,7 +82,7 @@ else{
 
 if((runner_age > 18) && (registration_time==="11:00 a.m")){
   late_adults = true;
-  console.log(`Your racenumber is ${raceNumber + 1000}`);
+  console.log(`Your run at 11:00 and your racenumber is ${raceNumber + 1000}`);
 }
 else{
   late_adults = false;
@@ -90,7 +90,7 @@ else{
 
 if((runner_age < 18)){
     all_youth = true;
-    console.log(`Your racenumber is ${raceNumber}`);
+    console.log(`You race at 12:30 and your racenumber is ${raceNumber}`);
 }
 else{
   all_youth = false;
@@ -99,7 +99,7 @@ else{
 if((runner_age === 18)){
     forbidden_youth = true;
     raceNumber = null;
-    console.log(`You don't have a racenumber little sucker`);
+    console.log(`You don't have a racenumber little sucker, oh and you also don't race`);
 }
 else{
   forbidden_youth = false;
