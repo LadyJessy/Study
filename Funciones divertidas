@@ -1,0 +1,22 @@
+//Create a function where you calculate the price of a single ticket to the movie THE BATMAN
+//Preconditions: The total cost was 27 and 3 people are going to the movies
+
+
+//First variant
+
+function TicketPrice(Total_price, Number_of_People){
+  console.log(`Your ticket price is ${Total_price/Number_of_People}`);
+}
+
+TicketPrice(); //Here we are not passing parameters so the output will be "Your ticket price is NaN"
+
+TicketPrice(27,3); //We can pass the values we want. Now when we call this function the message "Your ticket price is 9" will appear
+
+
+//Second variant
+
+function TicketPrice (Total_price = 27, Number_of_People = 3){
+  console.log('Your ticket price is ' + Total_price/Number_of_People);
+}
+
+TicketPrice(); //In this variant we don't assign parameters and we assume that the total price and number of people have default values, less flexible approach
