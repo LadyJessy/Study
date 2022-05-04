@@ -1,0 +1,80 @@
+Locators:
+
+- css
+- xpath (como en selenium project Roche)
+- tag name
+- Link
+- post Link
+
+Permiten acceder sea a elemento u objecto en la interfaz de la app
+
+Se puede copiar directamente el xpath seleccionando el elemento
+
+Formato de xpath (//"[@id="toc1"]) 
+
+Buscar en dev tools
+$("h3#toc1) - primero valida que el locator exista una vez (un error es que haya dos IDs iguales)
+$x("")
+
+Puedo listar todos los elementos de un tipo 
+
+Full xPath vs Normal xPath
+
+A veces los selectores complejos tienen que utilizarse - en caso que los IDs se repitan por ejemplo
+
+Minimum Requirements
+
+VS Code
+Node.js
+Configurar variable de entorno - node.js - path
+
+npm init -y
+npm i
+npx cypress open
+y
+- instala las librerias del cypress
+npm install cypress -save dev
+
+JSON viene configurado - licencia y librerias añadidas (cucumber)
+
+
+Instalar Plugins (Extensions)
+Cypress Helper (Global)
+Cypress Monitor
+"" Snippets
+Run Cypress
+Terminal
+
+
+En VS - folder integration - create test.js
+npx cypress open
+
+Busca el test en cypress y ejecutalo
+
+Open Selector Playground
+
+
+diferencia entre .class y # id - otra manera mas elaborada es hacerlo con el xpath
+
+Construir utilizando el ul class (6 nodos hijos)- llegar a un punto de referencia mas global y a partir de ahi especificar el elemento
+
+Poner en consola del navegador
+$("li.active") - en este caso devuelve 5 resultados
+
+$("li [href* = 'contacto.html']") - devuelve dos
+$("li main-menu-item [href* = 'contacto.html']") - este ya da el resultado correcto unico que buscamos
+nos da el locator para contruir la funcion
+
+
+describe('busqueda', function(){  //Funcion que se utiliza para iniciar el test, generica
+it('busqueda de museos', function(){  //IT significa caso de prueba - se pueden tener varios
+    cy.visit('https://www.madrid.es/portal/site/munimadrid')//get obtiene el objecto - label, texto, etc con un locator y posteriormente se añade la acción sobre ese objeto //visit es el comando para entrar a la URL
+    //cy.get(':nth-child(6) > .main-menu-item > span').click(); //Esto se obtiene con la mira y si se cambiara puede ser que la posicion cambie de 6 a 7
+    //cy.get('.main-menu-item').click(); esto da error porque no se esta especificando el nombre del elemento
+    //cy.get('.main-menu-item').contains('Contacto').click()
+//manera correcta es escoger un buen selector - 
+    //cy.get("ul.main-menu li [href*='contacto.html']").click()
+    cy.get("ul.sub-menu.visible-md-block.visible-lg-block li a[href*='Direcciones-y-telefonos']").click();
+
+})
+})
