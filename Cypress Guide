@@ -78,3 +78,36 @@ it('busqueda de museos', function(){  //IT significa caso de prueba - se pueden 
 
 })
 })
+
+
+Behaviour Driven Development
+- Early test case - after specification is created
+
+Gherkin is used for this (Given/When/Then)
+
+
+Cucumber - framework para trabajar con BDD (Java, Python, Javascript) - contiene el TDD
+
+PageObject - organizar archivos
+
+
+Crear el features file
+
+Carpeta de step_definitions - dentro de integration
+Carpeta de page object para tener todo organizado 
+- Crear el SearchPageObject.js (nivel 1)
+
+Archivo por cada pagina con los locators
+ContactoPageObject...
+
+Generalmente cada PageObject tiene su propio visit que lleva a la pagina especifica
+
+- Crear los StepsDefinitions (nivel 2)
+- Gherkin file - (Given, When, Then) 
+
+
+//Agregar la configuracion en index.js
+//Agregar configuracion a la cypress.json
+//Configurar el package.json
+
+"nonGlobalStepDefinitions": true - esto en el package json da problemas
